@@ -1,0 +1,625 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    /* background-image: url('');
+    background-size: cover;
+    background-position: center; */
+    height: 100vh;
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-left: 49px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 23px;
+}
+
+.logo {
+    width: 275px;
+    height: 75px;
+    margin-top: 2px;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    margin-right: 14em;
+}
+
+.nav_list li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.navbar_head {
+    /* border: 3.5px solid transparent; */
+    background-color: #fff;
+    width: 100%;
+    height: 73px;
+    margin-top: -5px;
+    /* margin-left: -3px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e4e5e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+}
+
+.all_flagged_inf{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.all_flagged_sp{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.inf_img_flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14rem;
+    width: 14rem;
+    background-color: white;
+    border: 1px solid #e4e5e7;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top: none;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.inf_img_flag:hover {
+    cursor: pointer;
+    position: relative;
+}
+
+.inf_img_flag:hover .influencer_image_flag {
+    transform: scale(1.1);
+}
+
+.inf_img_flag:hover :first-child {
+    display: block;
+}
+
+.inf_img_flag:hover :nth-child(2){
+    display: flex;
+}
+
+.flag_ban_overlay_flag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 160px;
+    width: inherit;
+    position: absolute;
+    display: none;
+    transition: opacity 0.03s ease-in-out;
+}
+
+.black_overlay_flag{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 224px;
+    width: 225px;
+    z-index: 2;
+    transition: opacity 0.15s ease-in-out;
+    display: none;
+}
+
+.black_overlay_ban{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 224px;
+    width: 225px;
+    z-index: 2;
+    transition: opacity 0.15s ease-in-out;
+    display: none;
+}
+
+.flag_btn_flag,
+.ban_btn_flag, .flag_btn_flag_sp, .flag_btn_ban, .flag_btn_ban_sp {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 41px;
+    height: 40px;
+    margin-left: 13px;
+    z-index: 5;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.flag_btn_flag, .flag_btn_flag_sp, .flag_btn_ban, .flag_btn_ban_sp{
+    margin-bottom: 19px;
+}
+
+.ban_btn_flag{
+    margin-top: -17px;
+    margin-left: -39px;
+}
+
+.flag_btn_flag:hover,
+.ban_btn_flag:hover, .flag_btn_flag_sp:hover, .flag_btn_ban:hover, .flag_btn_ban_sp:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.flag_btn_flag:hover :first-child {
+    cursor: pointer;
+    color: #ffbf00;
+}
+
+.flag_btn_flag_sp:hover :first-child {
+    cursor: pointer;
+    color: #ffbf00;
+}
+
+.flag_btn_ban:hover :first-child {
+    cursor: pointer;
+    color: #ffbf00;
+}
+
+.flag_btn_ban_sp:hover :first-child {
+    cursor: pointer;
+    color: #ffbf00;
+}
+
+
+
+.ban_btn_flag:hover :first-child {
+    cursor: pointer;
+    color: rgb(236, 27, 27);
+}
+
+.influencer_image_flag {
+    width: auto;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.4s ease;
+}
+
+.sp_img_flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14rem;
+    width: 14rem;
+    background-color: white;
+    border: 1px solid #e4e5e7;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top: none;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.sp_img_flag:hover {
+    cursor: pointer;
+    position: relative;
+}
+
+.sp_img_flag:hover .sp_image_flag {
+    transform: scale(1.1);
+}
+
+.sp_img_flag:hover :first-child {
+    display: block;
+}
+
+.sp_img_flag:hover :nth-child(2){
+    display: flex;
+}
+
+.sp_image_flag {
+    width: auto;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.4s ease;
+}
+
+.banned_users{
+    margin-top: 33px;
+}
+
+.all_flagged_inf, .all_flagged_sp {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    min-height: 21em;
+    min-width: 57em;
+    width: fit-content;
+    border-radius: 7px;
+}
+
+
+.black_overlay_flag_sp{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 224px;
+    width: 225px;
+    z-index: 2;
+    transition: opacity 0.15s ease-in-out;
+    display: none;
+}
+
+.black_overlay_ban_sp{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 224px;
+    width: 225px;
+    z-index: 2;
+    transition: opacity 0.15s ease-in-out;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.influencers{
+    margin-top: 85px;
+}
+
+.flagged_inf_heading{
+    font-size: 24px;
+    margin-left: 45px;
+    margin-top: 44px;
+    margin-bottom: 10px;
+    background: linear-gradient(200deg, rgba(248, 178, 82, 1), rgba(228, 100, 30, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.flagged_sp_heading{
+    font-size: 24px;
+    margin-left: 45px;
+    margin-top: 44px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right top, #9ebd13, #78b12e, #54a33e, #31954a, #008552);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+.heading_search{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search_inf_form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 61px;
+    margin-top: 5px;
+}
+
+
+#search_inf{
+    height: 7px;
+    width: 215px;
+    border-radius: 4px;
+    border: 1px solid;
+    padding: 11px;
+    font-size: 14px;
+    font-family: 'Ubuntu', serif;
+}
+
+#search_icon{
+    color: black;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+#search_icon:hover{
+    cursor: pointer;
+}
+
+
+.no_entries{
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    margin-left: 45px;
+    font-size: 20px;
+    color: #5a5c5e;
+}
+
+.no_entries h3{
+    font-family: 'Ubuntu', serif;
+    font-weight: 400;
+}
+
+
+.all_inf_heading {
+    margin-left: 45px;
+}
+
+.all_sp_heading {
+    margin-left: 45px;
+}
+
+.all_inf {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.influencer_div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 25px;
+    width: 14rem;
+    padding: 15px;
+}
+
+.inf_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 40px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 1px solid #e4e5e7;
+}
+
+.influencer_name {
+    font-family: 'Poppins', serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.inf_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14rem;
+    width: 14rem;
+    background-color: white;
+    border: 1px solid #e4e5e7;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top: none;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.inf_img:hover {
+    cursor: pointer;
+    position: relative;
+}
+
+/* .inf_img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+} */
+
+.inf_img:hover .influencer_image {
+    transform: scale(1.1);
+}
+
+.inf_img:hover .sponsor_image {
+    transform: scale(1.1);
+}
+
+
+
+.influencer_image {
+    width: auto;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.4s ease;
+}
+
+
+
+.ban_ico {
+    margin-top: 2px;
+    margin-left: 1px;
+}
+
+.action_btns {
+    display: flex;
+    flex-direction: row;
+    height: 46px;
+    width: -webkit-fill-available;
+    align-items: center;
+    border: 1px solid #e4e5e7;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    overflow: hidden;
+    margin-top: -2px;
+}
+
+.user_action_btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Ubuntu', serif;
+    width: 47%;
+    font-size: 18px;
+    background-color: #f89c32;
+    color: white;
+    padding-left: 35px;
+}
+
+.action_btns:hover {
+    cursor: pointer;
+}
+
+
+
+.all_sp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sponsor_image {
+    width: 10rem;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.4s ease;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 18px;
+    margin-top: 2px;
+    color: white;
+}
+
+.black_overlay, .black_overlay_sp{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 224px;
+    width: 225px;
+    z-index: 2;
+    transition: opacity 0.15s ease-in-out;
+    display: none;
+}
+
+.inf_img:hover .black_overlay, .inf_img:hover .black_overlay_sp {
+    display: block;
+}
+
+.inf_img:hover .flag_ban_overlay{
+    display: flex;
+}
+
+.flag_ban_overlay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 160px;
+    width: fit-content;
+    position: absolute;
+    display: none;
+    transition: opacity 0.03s ease-in-out;
+}
+
+.flag_btn,
+.ban_btn, .flag_btn_sp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 41px;
+    height: 40px;
+    /* margin-left: 38px; */
+    z-index: 5;
+    transition: background-color 0.25s ease-in-out;
+}
+
+
+.ban_btn {
+    margin-left: 65px;
+}
+
+.flag_btn:hover,
+.ban_btn:hover, .flag_btn_sp:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.flag_btn:hover .flag_ico, .flag_btn_sp:hover .flag_ico {
+    cursor: pointer;
+    color: #ffbf00;
+}
+
+.ban_btn:hover .ban_ico {
+    cursor: pointer;
+    color: rgb(236, 27, 27);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

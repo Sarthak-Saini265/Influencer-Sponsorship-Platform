@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.message-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.message-box h1 {
+    color: #e74c3c;
+}
+
+.message-box p {
+    margin: 10px 0;
+}
+
+.message-box a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.message-box a:hover {
+    text-decoration: underline;
+}

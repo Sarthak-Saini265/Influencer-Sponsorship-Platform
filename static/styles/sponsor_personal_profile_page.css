@@ -1,0 +1,1344 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #F7F7F7;
+}
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
+    margin-top: 2.7px;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+}
+
+/* .content::-webkit-scrollbar {
+    display: none;
+} */
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 23px;
+}
+
+.nav_list_anchors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+}
+
+.nav_list_anchors:hover {
+    text-decoration: underline;
+}
+
+#explore_div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -2px;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    user-select: none;
+}
+
+#explore_div:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore_arrow {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 250,
+        'GRAD' 0,
+        'opsz' 20 !important;
+    font-size: 23px !important;
+    user-select: none;
+    transition: transform 0.15s ease-in-out;
+}
+
+.explore_overlay {
+    z-index: 5;
+    position: fixed;
+    height: auto;
+    width: 344px;
+    /* width: 354px; */
+    margin-top: 21em;
+    margin-left: -2em;
+    margin-left: 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+    /* padding: 15px; */
+}
+
+.explore_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.explore_overlay_ul:hover {
+    cursor: pointer;
+}
+
+.explore_sponsors_li {
+    padding: 15px;
+}
+
+.explore_sponsors_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_niche_li {
+    padding: 15px;
+}
+
+.explore_niche_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_campaigns_li {
+    padding: 15px;
+}
+
+.explore_campaigns_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_profile_maker_li {
+    padding: 15px;
+}
+
+.explore_profile_maker_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_sponsors_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.explore_sponsors_heading {
+    font-family: 'Ubuntu', serif;
+    color: #404145;
+    font-weight: 800;
+}
+
+.explore_sponsors_desc {
+    font-family: 'Ubuntu', serif;
+    font-size: 15px;
+    color: #404145;
+    margin-top: 5px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.profile_pic_li {
+    margin-left: 5px;
+}
+
+.profile_pic_div_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    border-radius: 148px;
+    overflow: hidden;
+}
+
+
+.profile_pic_nav {
+    width: auto;
+    height: 100%;
+}
+
+.profile_pic_div_nav:hover {
+    cursor: pointer;
+}
+
+.profile_overlay {
+    z-index: 5;
+    position: fixed;
+    height: auto;
+    width: 150px;
+    margin-top: 14em;
+    margin-left: 11.5em;
+    margin-left: 148px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+}
+
+.profile_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.profile_overlay_ul:hover {
+    cursor: pointer;
+}
+
+.profile_overlay_li {
+    padding: 15px;
+}
+
+.profile_overlay_li:hover {
+    background-color: #F5F5F5;
+}
+
+.profile_overlay_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.profile_overlay_heading {
+    font-family: 'Poppins', serif;
+    color: #404145;
+    font-weight: 900;
+}
+
+.logo {
+    width: 275px;
+    height: 75px;
+    margin-top: 2px;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-right: 9em;
+}
+
+.navbar_head {
+    /* border: 3.5px solid transparent; */
+    background-color: #fff;
+    width: 100%;
+    height: 73px;
+    margin-top: -5px;
+    /* margin-left: -3px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e4e5e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: 100vh;
+    width: 66%;
+    margin-top: 58px;
+}
+
+.profile_related {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30%;
+    max-height: 528px;
+    height: 57.6%;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dadbdd;
+}
+
+.online {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 8.5%;
+    margin-left: -7px;
+    margin-top: 2px;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.online_div_border {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border: 2px solid green;
+    border-radius: 12px;
+    width: 18%;
+    height: 24%;
+}
+
+.online_ico {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 20 !important;
+    font-size: 13px !important;
+    color: green;
+    user-select: none;
+}
+
+.online_text {
+    font-family: 'Ubuntu', serif;
+    color: green;
+    font-size: 15px;
+}
+
+.main_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    border-bottom: 1px solid #bdc0c5;
+}
+
+.profile_pic_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 10rem;
+    background-color: white;
+    border-radius: 148px;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+.profile_pic {
+    width: auto;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.profile_pic_div:hover {
+    cursor: pointer;
+}
+
+.name_username {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name {
+    font-family: 'Ubuntu', serif;
+    font-size: 22px;
+    letter-spacing: 0.6px;
+}
+
+.username {
+    font-family: 'Poppins', serif;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+    color: #74767e;
+    margin-top: -14px;
+}
+
+.preview_profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 334px;
+    /* margin-left: -60px; */
+    padding: 5px;
+    height: 8%;
+    border: 1.5px solid #74767E;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Ubuntu', serif;
+    color: #62646A;
+    user-select: none;
+}
+
+.preview_profile:hover {
+    cursor: pointer;
+    background: #74767e;
+    color: white;
+}
+
+
+
+
+.location_date_joined {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #bdc0c5;
+    width: 93%;
+}
+
+.location_ico {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 20;
+    font-size: 20px;
+    color: #62646A;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+
+.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.from_place {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.from_place h5 {
+    font-family: 'Poppins', serif;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+}
+
+.country h5 {
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+
+
+.member_ico {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 20;
+    font-size: 25px;
+    color: #62646A;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.date_joined {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.member_since {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.member_since h5 {
+    font-family: 'Poppins', serif;
+    font-size: 13.5px;
+    letter-spacing: 0.7px;
+}
+
+.joined_date h5 {
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+
+.joined_date h5:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+.work_available {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 93%;
+}
+
+
+.calendar_ico {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 19px;
+    color: #62646A;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.work_available h5 {
+    font-family: 'Poppins', serif;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+}
+
+
+.edit_profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 334px;
+    /* margin-left: -60px; */
+    padding: 5px;
+    height: 4.3%;
+    border: 1.5px solid #74767E;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Ubuntu', serif;
+    color: #62646A;
+    margin-top: -5px;
+    user-select: none;
+}
+
+.edit_profile:hover {
+    cursor: pointer;
+    background: #74767e;
+    color: white;
+}
+
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    width: 53%;
+    height: max-content;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dadbdd;
+    margin-left: 75px;
+}
+
+.dash_heading_date {
+    border-bottom: 1px solid #bdc0c5;
+}
+
+.dash_heading_contracts_section_btn {
+    display: flex;
+    flex-direction: row;
+}
+
+.dash_heading_contracts_section_btn_alternate {
+    display: flex;
+    flex-direction: row;
+}
+
+.dash_heading {
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    margin-top: -2px;
+    margin-bottom: 9px;
+}
+
+.contracts_heading {
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    margin-top: -2px;
+    margin-bottom: 9px;
+}
+
+.contracts_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    /* margin-left: -60px; */
+    padding: 5px;
+    height: 27px;
+    background-color: white;
+    border: 1.5px solid #74767E;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Ubuntu', serif;
+    color: #62646A;
+    user-select: none;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.contracts_btn:hover {
+    cursor: pointer;
+    background: #74767e;
+    color: white;
+}
+
+#flagged {
+    color: red;
+    font-family: 'Ubuntu';
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.dashboard_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    /* margin-left: -60px; */
+    padding: 5px;
+    height: 27px;
+    background-color: white;
+    border: 1.5px solid #74767E;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Ubuntu', serif;
+    color: #62646A;
+    user-select: none;
+    margin-left: 10px;
+    margin-top: -1px;
+}
+
+.dashboard_btn:hover {
+    cursor: pointer;
+    background: #74767e;
+    color: white;
+}
+
+.dash_date {
+    font-family: 'Poppins', serif;
+    font-size: 15px;
+    color: #74767e;
+    font-weight: 900;
+}
+
+
+.campaigns_heading_text {
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    margin-top: 15px;
+    font-size: 21px;
+}
+
+.campaign_all_divs {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    /* margin: auto; */
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* height: 35rem; */
+    /* overflow-y: auto; */
+    min-height: 100%;
+    border-bottom: 1px solid #e4e5e7;
+}
+
+.campaign_div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 157px;
+    width: 182px;
+    margin-bottom: 23px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* box-sizing: border-box; */
+    padding: 25px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.edit_delete_overlay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 127px;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.edit_campaign_btn,
+.delete_campaign_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 41px;
+    height: 40px;
+    margin-left: 15px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.delete_campaign_btn {
+    margin-left: 65px;
+}
+
+
+.edit_campaign_btn:hover,
+.delete_campaign_btn:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.delete_campaign_btn:hover .delete_ico {
+    color: rgb(236, 27, 27);
+}
+
+.edit_delete_ico {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 22.5px;
+    color: white;
+}
+
+
+
+
+.campaign_div:hover {
+    cursor: pointer;
+
+    .edit_delete_overlay {
+        opacity: 1;
+    }
+}
+
+
+.campaign_heading {
+    color: rgb(236, 234, 234);
+    font-size: 22px;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.7px;
+}
+
+
+.new_campaign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 157px;
+    width: 120px;
+    margin-bottom: 23px;
+    padding: 25px;
+    border-radius: 7px;
+    margin-right: 10px;
+    background-color: #ededed;
+    transition: all 0.12s ease-in-out;
+}
+
+.new_campaign:hover {
+    cursor: pointer;
+    background-color: #cbc9c9;
+}
+
+.new_circle_ico {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 22px;
+    color: #36373a;
+}
+
+
+.new_campaign_text {
+    font-family: 'Ubuntu', serif;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.all_charts {
+    margin-top: 65px;
+}
+
+
+.bar_chart_div {
+    border-bottom: 1px solid #bdc0c5;
+}
+
+.bar_heading {
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+
+.est_earnings {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: 15px;
+}
+
+.earnings_monthly {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    font-size: 15px;
+    color: #62646A;
+}
+
+.earnings_monthly p {
+    font-family: 'Poppins', serif;
+    font-weight: 900;
+}
+
+
+.total_earnings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    font-size: 15px;
+    color: #62646A;
+    margin-top: -17px;
+}
+
+.total_earnings p {
+    font-family: 'Poppins', serif;
+    margin-left: 20px;
+    font-weight: 900;
+}
+
+
+.all_donut_charts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 7px;
+    margin-bottom: 45px;
+}
+
+.all_donut_heading {
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.both_donuts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.donut_chart_div {
+    height: 16em;
+    width: 16em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.donut_heading {
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+.donut_chart {
+    height: 16em;
+}
+
+
+.reach_donut_chart_div {
+    height: 16em;
+    width: 16em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.donut_text_div {
+    /* position: relative; */
+    position: absolute;
+    z-index: 2;
+    margin-top: 7em;
+}
+
+
+.donut_text {
+    font-family: 'Ubuntu', serif;
+    font-size: 16px;
+    color: #62646A;
+}
+
+.black_overlay {
+    position: absolute;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+
+.delete_confirmation {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 45em;
+    margin-top: 18em;
+    z-index: 5;
+    height: 15%;
+    width: 27%;
+    padding: 15px;
+    display: none;
+    border-radius: 4px;
+    background-color: white;
+    font-family: 'Ubuntu', serif;
+    box-shadow: 0 1.2px 10px rgba(0, 0, 0, .05), 0 2px 20px rgba(0, 0, 0, .05), 0 1px 25px rgba(0, 0, 0, .05);
+}
+
+.delete_confirmation h3 {
+    font-size: 22px;
+    letter-spacing: 0.6px;
+    margin-top: 7px;
+}
+
+.yes_no {
+    margin: auto;
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.yes,
+.no {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    height: 18px;
+    width: 65px;
+    padding: 12px;
+    border-radius: 5px;
+    transition: 0.12s ease-in-out all;
+}
+
+.yes:hover,
+.no:hover {
+    cursor: pointer;
+}
+
+.yes {
+    border: 2px solid red;
+}
+
+.yes:hover {
+    background-color: red;
+    color: white;
+}
+
+.no {
+    border: 2px solid gray;
+}
+
+.no:hover {
+    background-color: gray;
+    color: white;
+}
+
+.end_space {
+    height: 100px;
+    width: 100%;
+}
+
+
+
+.negotiations_heading {
+    font-family: 'Ubuntu', serif;
+    font-size: 24px;
+    margin-left: 22px;
+    margin-top: 22px;
+    margin-bottom: -5px;
+}
+
+.negotiation_contracts_div {
+    font-family: 'Ubuntu', serif;
+    margin-top: 25px;
+    overflow-x: auto;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.inf_ini_heading {
+    font-family: 'Ubuntu', serif;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+    margin-left: 33px;
+}
+
+.negotiation_contracts_div table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.negotiation_contracts_div thead {
+    background-color: #4CAF50;
+    /* background-color: #f79d60; */
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.negotiation_contracts_div th,
+.negotiation_contracts_div td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.negotiation_contracts_div th {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.negotiation_contracts_div tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.negotiation_contracts_div tbody tr:nth-of-type(even) {
+    background-color: #f2f2f2;
+}
+
+.negotiation_contracts_div tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.negotiation_contracts_div tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.negotiation_contracts_div tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+
+.inf_neg_ad_link:hover {
+    text-decoration: underline;
+}
+
+.neg_inf_price {
+    text-decoration: underline;
+}
+
+.cancel_btn_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 31px;
+    width: 106%;
+    border-radius: 4px;
+}
+
+.cancel_btn_div:hover {
+    cursor: pointer;
+    background-color: #f53e3e;
+}
+
+
+.close_ico {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 17px;
+    margin-bottom: 3px;
+    margin-right: -5px;
+    color: white;
+}
+
+.close_ico:hover {
+    cursor: pointer;
+}
+
+.cancel {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.cancel:hover {
+    cursor: pointer;
+}
+
+
+.sp_ini_heading {
+    font-family: 'Ubuntu', serif;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+    margin-left: 33px;
+    margin-top: 28px;
+}
+
+.action_buttons_sp_neg {
+    display: flex;
+    flex-direction: row;
+}
+
+.negot_window {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    width: 20%;
+    background-color: white;
+    margin-left: -5em;
+    margin-top: 2.5em;
+    border-radius: 5px;
+    border: 1px solid #e4e5e7;
+    display: none;
+}
+
+.negotiate_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+
+form {
+    width: 100%;
+    padding: 12px;
+}
+
+.form_field label {
+    font-family: 'Open Sans', serif;
+    display: block;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+.form_field input,
+.form_field textarea {
+    width: 90%;
+    font-size: 13.5px;
+    padding: 13px;
+    letter-spacing: 0.4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-family: 'Ubuntu', serif;
+    box-sizing: border-box;
+}
+
+.msg_field {
+    margin-top: 5px;
+}
+
+.form_field input:hover,
+.form_field textarea:hover {
+    border: 1px solid #fa8131;
+}
+
+.form_field input:focus,
+.form_field textarea:focus {
+    border: 1px solid #fa8131;
+    outline: none;
+}
+
+.form_field textarea {
+    height: 70px;
+    max-width: 90%;
+    max-height: 150px;
+    min-width: 90%;
+    min-height: 45px;
+}
+
+.form_field input {
+    height: 35px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.submit_button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    width: 25%;
+    border-radius: 4px;
+    font-family: 'Ubuntu', serif;
+    background-color: #fa8131;
+    margin-top: 2px;
+    color: white;
+    font-size: 15px;
+    border: 2px solid rgb(250, 129, 49);
+}
+
+.submit_button:hover {
+    cursor: pointer;
+    border-color: #f56b00;
+    background-color: #f56b00;
+}
+
+.submit {
+    font-family: 'Ubuntu', serif;
+    color: white;
+    font-size: 15px;
+    background: transparent;
+    border: transparent;
+}
+
+.submit:hover {
+    cursor: pointer;
+}
+
+
+#send_icon {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 15px;
+    margin-bottom: 2.5px;
+    color: white;
+}
+
+.reject_btn_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    width: 27px;
+    border-radius: 100%;
+}
+
+.reject_btn_div:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.reject_btn_div:hover :first-child {
+    color: white;
+}
+
+.reject_ico {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 17px;
+    color: #62646a;
+}
+
+.reject_ico:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.accept_ico {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 17px;
+    color: #62646a;
+}
+
+.accept_ico:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.negotiate_ico {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    font-size: 17px;
+    color: #62646a;
+}
+
+.negotiate_ico:hover {
+    cursor: pointer;
+    color: white;
+}

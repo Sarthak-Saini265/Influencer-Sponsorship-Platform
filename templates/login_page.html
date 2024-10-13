@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/login_page.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <h3 class="account_created_confirm">Account Created Successfully. Please Login.</h3>
+        <div class="actual_work_div">
+            <div class="login_content">
+                <h1 class="heading">Login to Your Account</h1>
+                <form action="/login" method="POST" id="loginForm" accept-charset="UTF-8">
+                    <div class="input_div">
+                        <input type="text" name="username" id="username" class="input username" placeholder="Username">
+                        <input type="password" name="password" id="password" class="input password"
+                            placeholder="Password" required>
+                    </div>
+                    <center><input type="submit" value="Login" class="submit"></center>
+                </form>
+            </div>
+            <div class="right_div">
+                <h1 class="righ_div_head">New Here?</h1>
+                <center>
+                    <p class="desc">Sign up and discover a great amount of new opportunities!</p>
+                </center>
+                <a href="/signup_choose"><button class="sign_up">Sign Up</button></a>
+            </div>
+        </div>
+    </div>
+    {% if trigger_js %}
+        <script>
+            let acc_created_msg = document.querySelector('.account_created_confirm');
+            acc_created_msg.style.display = 'block';
+        </script>
+    {% endif %}
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            var passwordInput = document.getElementById('password');
+            passwordInput.value = encodeURIComponent(passwordInput.value);
+        });
+    </script>
+</body>
+
+</html>

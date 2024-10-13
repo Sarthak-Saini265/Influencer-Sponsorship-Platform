@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.account_created_confirm{
+    display: none;
+    position: absolute;
+    z-index: 2;
+    font-family: 'Ubuntu', serif;
+    color: #e5772f;
+    margin-top: 56px;
+    text-decoration: underline;
+    text-decoration-thickness: 8px;
+}
+
+
+.actual_work_div {
+    margin: auto;
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    height: 70%;
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid #dbdcdf;
+}
+
+.login_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+
+.heading {
+    font-family: 'Ubuntu', serif;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.input {
+    height: 17px;
+    width: 88%;
+    font-family: 'Poppins', serif;
+    /* font-weight: 900; */
+    font-size: 13.5px;
+    border-radius: 15px;
+    padding: 12px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    background-color: #EDF5F3;
+    border: 2px solid transparent;
+    color: black;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+.input:hover{
+    border: 2px solid #fa8131;
+}
+
+.input:focus{
+    border: 2px solid #fa8131;
+    outline: none;
+}
+
+.submit {
+    height: 42px;
+    width: 40%;
+    border-radius: 30px;
+    font-family: 'Ubuntu', serif;
+    background-color: #fa8131;
+    color: white;
+    font-size: 14px;
+    border: 2px solid rgb(250, 129, 49);
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #fa8131;
+}
+
+
+.right_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 38%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: linear-gradient(to right top, #f4b505, #de9703, #c67b04, #ad6104, #924804);
+    /* background: linear-gradient(90deg, #e0cc1c 0%, #946c00 100%); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-left: 2px solid transparent;
+}
+
+.righ_div_head{
+    font-family: 'Ubuntu', serif;
+    font-size: 40px;
+    color: white;
+}
+
+.desc{
+    font-family: 'Poppins', serif;
+    font-size: 18px;
+    margin-top: 10px;
+    width: 80%;
+    color: white;
+}
+
+.sign_up{
+    height: 42px;
+    width: 170px;
+    border-radius: 30px;
+    font-family: 'Ubuntu', serif;
+    background-color: #fff;
+    color: black;
+    font-size: 14px;
+    border: 2px solid white;
+    margin-top: 20px;
+}
+
+.sign_up:hover{
+    cursor: pointer;
+    background-color: #eeeeee;
+    border: 2px solid #eeeeee;
+}
+
+
+
+
+
+
+
+

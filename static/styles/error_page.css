@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #9ebd13 0%, #008552 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+.actual_work_div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 68%;
+    background: rgba(255, 255, 255, 0.5);
+    align-items: center;
+}
+
+.error_code {
+    /* position: relative; */
+    display: inline-block;
+    font-size: 17em;
+    font-weight: bold;
+    color: white;
+    overflow: hidden;
+    /* mix-blend-mode: exclusion; */
+    margin-top: -15px;
+    font-family: 'Open Sans', serif;
+    color: transparent;
+}
+
+span{
+    background: linear-gradient(90deg, #9ebd13 0%, #008552 100%) 0px -20px repeat;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    display:block;
+}
+
+.other_text {
+    display: flex;
+    margin-top: -55px;
+    width: 80%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.error_text {
+    font-family: 'Poppins', serif;
+    font-size: 2.4em;
+    color: rgb(59, 59, 59);
+    margin-bottom: 5px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.error_msg {
+    font-family: 'Ubuntu', serif;
+    font-size: 1.5em;
+    letter-spacing: 0.3px;
+    color: #3B3B3B;
+}
+
+
+.buttons {
+    display: flex;
+    width: 45%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.generic_button {
+    height: 45px;
+    width: 11em;
+    border-radius: 30px;
+    font-family: 'Ubuntu', serif;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+}
+
+.return_home {
+    background-color: #5EA62C;
+    border: 2px solid #5EA62C;
+}
+
+.return_home:hover{
+    background-color: rgba(94, 166, 44, 0.8);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.sign_up{
+    border: 2px solid #5EA62C;
+    color: #5EA62C;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.sign_up:hover{
+    background-color: #dddddd;
+    border: 2px solid #dddddd;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.25s, border 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+
+
+
+
+
+
+

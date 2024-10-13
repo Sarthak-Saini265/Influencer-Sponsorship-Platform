@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/influencer_profile_creator.css">
+    <title>{{username}} - Edit Profile</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <ul class="nav_list">
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Become a Sponsor</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="black_overlay"></div>
+        <div class="image_upload">
+            <div class="account_details_heading">
+                <h4 class="upload_head">Enter URL for your image</h4>
+            </div>
+            <form action="" method="POST" id="img_url_form" onsubmit="return handleFormSubmit(event)">
+                <div class="form_field url_div">
+                    <label for="image_url" class="form_label">Image Url</label>
+                    <input type="text" name="image_url" id="image_url" class="url_input" required>
+                </div>
+                <div class="submit_button url_submit">
+                    <input type="submit" value="Upload" class="submit">
+                </div>
+            </form>
+        </div>
+        <div class="content">
+            <div class="profile_picture_edit_div">
+                <div class="profile_pic_heading">
+                    <h4>Profile Picture</h4>
+                </div>
+                <div class="picture_with_button">
+                    <div class="profile_pic_div">
+                        <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
+                            alt="" class="profile_pic">
+                    </div>
+                    <div class="picture_edit_button" onclick=upload_overlay_trigger()>Upload an image</div>
+                </div>
+            </div>
+            <div class="account_details_password">
+                <div class="account_details">
+                    <div class="account_details_heading">
+                        <h4>Account Details</h4>
+                    </div>
+                    <div class="edit_form">
+                        <form action="/influencer/{{username}}/new_profile" method="POST" id="profile_form">
+                            <div class="form_names input_extreme_left">
+                                <div class="form_field input_side_width">
+                                    <label for="first_name" class="form_label">First Name</label>
+                                    <input type="text" name="first_name" id="first_name" class="form_input" required>
+                                </div>
+                                <div class="form_field input_side_width input_extreme_right">
+                                    <label for="last_name" class="form_label">Last Name</label>
+                                    <input type="text" name="last_name" id="last_name" class="form_input" required>
+                                    <input type="hidden" name="hidden_image_url" id="hidden_image_url">
+                                </div>
+                            </div>
+                            <div class="country_gender input_extreme_left">
+                                <div class="form_field gender_drop_down">
+                                    <label for="gender" class="form_label">Gender</label>
+                                    <select name="gender" id="gender" class="form_input" required>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form_field country_div">
+                                    <label for="country" class="form_label">Country</label>
+                                    <input type="text" name="country" id="country" class="form_input" required>
+                                </div>
+                            </div>
+                            <div class="insta_followers">
+                                <div class="form_field">
+                                    <label for="insta_followers" class="form_label">No. of Instagram Followers</label>
+                                    <input type="number" name="insta_followers" id="insta_followers"
+                                        class="form_input i_foll_input"
+                                        placeholder="please enter precise numbers, eg-215640" required>
+                                </div>
+                            </div>
+                            <div class="insta_posts">
+                                <div class="form_field">
+                                    <label for="insta_posts" class="form_label">No. of Instagram Posts</label>
+                                    <input type="number" name="insta_posts" id="insta_posts"
+                                        class="form_input i_foll_input"
+                                        placeholder="please enter precise numbers, eg-127" required>
+                                </div>
+                            </div>
+                            <div class="niches form_field">
+                                <h4 class="niche_heading">Enter your niches</h4>
+                                <div class="niche_all_divs">
+                                    <div class="niche_div">
+                                        <input type="text" name="niches[]" placeholder="Enter a niche" class="niche_input">
+                                        <button type="button" class="add_niche_button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submit_button">
+                                <input type="submit" value="Continue" class="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/scripts/influencer_profile_creator.js"></script>
+</body>
+
+</html>

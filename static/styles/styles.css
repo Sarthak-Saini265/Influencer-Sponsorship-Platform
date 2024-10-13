@@ -1,0 +1,705 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main_div {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.img_div {
+    height: 75vh;
+    width: 100.86%;
+    background-image: url("https://raw.githubusercontent.com/Sarthak-Saini265/image_storage/main/wallpaperflare.com_wallpaper%20(2).jpg?raw=true");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    /* flex: 1; */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
+    margin-top: 2.7px;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+}
+
+/* .content::-webkit-scrollbar {
+    display: none;
+} */
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 23px;
+}
+
+.nav_list_anchors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 13px 0px 5px 0px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    border-bottom: 0px solid white;
+    margin: 0rem 15px;
+}
+
+
+
+.nav_list_anchors:hover {
+    border-bottom: 2px solid white;
+    padding-bottom: 7px;
+}
+
+#explore_div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -2px;
+    text-decoration: none;
+    color: white;
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    user-select: none;
+}
+
+#explore_div:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore_arrow{
+    transition: transform 0.15s ease-in-out;
+}
+
+.explore_overlay {
+    z-index: 2;
+    position: fixed;
+    height: auto;
+    width: 344px;
+    /* width: 354px; */
+    margin: 50px;
+    margin-left: 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+    /* padding: 15px; */
+}
+
+.explore_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.explore_overlay_ul:hover{
+    cursor: pointer;
+}
+
+.explore_sponsors_li {
+    padding: 15px;
+}
+
+.explore_sponsors_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_niche_li {
+    padding: 15px;
+}
+
+.explore_niche_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_campaigns_li {
+    padding: 15px;
+}
+
+.explore_campaigns_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_profile_maker_li {
+    padding: 15px;
+}
+
+.explore_profile_maker_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_sponsors_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.explore_sponsors_heading {
+    font-family: 'Ubuntu', serif;
+    color: #404145;
+    font-weight: 800;
+}
+
+.explore_sponsors_desc {
+    font-family: 'Ubuntu', serif;
+    font-size: 15px;
+    color: #404145;
+    margin-top: 5px;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(21px);
+}
+
+
+.logo {
+    width: 275px;
+    height: 75px;
+    margin-top: 2px;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 9em;
+}
+
+.navbar_head {
+    /* border: 3.5px solid transparent; */
+    background-color: transparent;
+    width: 100%;
+    height: 73px;
+    margin-top: -5px;
+    /* margin-left: -3px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_content {
+    display: flex;
+    flex-direction: column;
+    height: 59%;
+    width: 32%;
+    margin: 97px;
+}
+
+.tagline {
+    color: white;
+    font-family: 'Poppins', serif;
+    letter-spacing: 0.8px;
+    font-size: 47px;
+}
+
+.search_bar{
+    margin-top: 12px;
+}
+
+#search_form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#search{
+    font-weight: 900;
+    font-family: 'Poppins';
+    width: 28em;
+    height: 18px;
+    border: none !important;
+    border-radius: 4px;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+    padding: 15px;
+}
+
+#search:focus-visible{
+    outline: none;
+}
+
+.search_ico_div{
+    background-color: #f5b14a;
+    margin-left: 7px;
+    padding: 8px;
+    height: 31px;
+    border-radius: 4px;
+    color: white;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.search_ico_div:hover{
+    cursor: pointer;
+    background-color: #e2a033;
+}
+
+
+
+.partners {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 37%;
+    margin: auto;
+    user-select: none;
+}
+
+.partners_heading {
+    color: #C2C2C2;
+    font-family: 'Ubuntu', serif;
+    font-size: 21px;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+}
+
+
+.ongoing_campaigns {
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    margin: auto;
+    margin-top: 43px;
+    border-bottom: 1px solid #bdc0c5;
+}
+
+/* .ongoing_campaigns::after {
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: #bdc0c5;
+    transform: translateX(-10%);
+} */
+
+.ongoing_all_divs {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    /* margin: auto; */
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    /* height: 35rem; */
+    /* overflow-y: auto; */
+}
+
+.ongoing_campaign_div {
+    height: 207px;
+    width: 246px;
+    margin-bottom: 23px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* box-sizing: border-box; */
+    padding: 25px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.ongoing_campaign_div:hover {
+    cursor: pointer;
+}
+
+
+.heading_browse {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ongoing_head {
+    font-family: 'Ubuntu', serif;
+}
+
+.browse_all {
+    font-size: 17px;
+    font-family: 'Open Sans', serif;
+    font-weight: 500;
+}
+
+
+#browse_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.browse_all:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ongoing_campaign_heading {
+    color: rgb(236, 234, 234);
+    font-size: 26px;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.7px;
+}
+
+.ongoing_campaign_company {
+    color: gainsboro;
+    font-family: 'Poppins', serif;
+    font-size: 20px;
+    letter-spacing: 0.7px;
+}
+
+.details_overlay {
+    display: none;
+    position: relative;
+    height: 355px;
+    width: 285px;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url(/static/overlay_background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 18px;
+    color: white;
+    z-index: 2;
+    font-family: 'Poppins', serif;
+    margin-top: 88px;
+    margin-left: -25px;
+}
+
+.overlay_description {
+    color: rgb(218, 195, 195);
+}
+
+.overlay_heading {
+    letter-spacing: 0.7px;
+}
+
+.overlay_end_date {
+    letter-spacing: 0.7px;
+}
+
+.overlay_company {
+    letter-spacing: 0.7px;
+}
+
+.overlay_end_date span {
+    color: rgb(243, 170, 182);
+}
+
+.overlay_company span {
+    color: rgb(243, 170, 182);
+}
+
+
+
+/* .ongoing_campaign_div:hover .details_overlay{
+    display: block;
+} */
+
+.trending_ads {
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    margin: auto;
+    margin-top: 43px;
+}
+
+/* .trending_ads::before {
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: #bdc0c5;
+    transform: translateX(-10%);
+    margin-bottom: 23px;
+    margin-top: -8px;
+} */
+
+.trending_all_divs {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
+    /* margin: auto; */
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 35rem;
+    overflow-y: auto;
+}
+
+.blur {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+.trending_ad_div {
+    height: 207px;
+    width: 246px;
+    margin-bottom: 23px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* box-sizing: border-box; */
+    padding: 25px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.trending_ad_div:hover {
+    cursor: pointer;
+}
+
+.trending_head {
+    font-family: 'Ubuntu', serif;
+}
+
+.trending_ad_heading {
+    color: rgb(236, 234, 234);
+    font-size: 24px;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.7px;
+    z-index: 1;
+}
+
+.trending_ad_payment {
+    color: gainsboro;
+    font-family: 'Poppins', serif;
+    font-size: 19px;
+    letter-spacing: 0.7px;
+    padding-top: 5px;
+    z-index: 1;
+}
+
+/* .preview {
+    display: none;
+    font-family: 'Poppins', serif;
+    color: white;
+    border-left: 10px solid gainsboro;
+    width: 50%;
+    margin-right: -16px;
+    /* background-color: gainsboro;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(/static/overlay_background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    flex-direction: column;
+} */
+
+.dummy_text {
+    letter-spacing: 0.7px;
+}
+
+.ad_heading_browse {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.browse_all_ads {
+    font-size: 17px;
+    font-family: 'Open Sans', serif;
+    font-weight: 500;
+}
+
+#ad_browse_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.browse_all_ads:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.fonts {
+    font-family: 'Ubuntu', serif;
+    font-size: 38px;
+    letter-spacing: 0.7px;
+    padding-left: 15px;
+    padding-right: 12px;
+}
+
+.top_influencers_div {
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+    margin: auto;
+    margin-top: 43px;
+    border-bottom: 1px solid #bdc0c5;
+}
+
+.infl_heading {
+    font-family: 'Ubuntu', serif;
+}
+
+.influencers_all_divs {
+    display: flex;
+    flex-direction: row;
+    width: 104%;
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.influencer_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 48px;
+    margin-bottom: 20px;
+}
+
+.infl_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17rem;
+    width: 17rem;
+    background-color: white;
+    border-radius: 148px;
+    overflow: hidden;
+}
+
+.infl_image:hover {
+    cursor: pointer;
+}
+
+.influencer_image {
+    width: auto;
+    height: 100%;
+}
+
+.infl_rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -32px;
+}
+
+.infleuncer_contracts_compl {
+    margin-left: 3.5px;
+}
+
+.influencer_name {
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    letter-spacing: 0.7px;
+}
+
+.influencer_name:hover {
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+.influencer_rating {
+    font-family: 'Poppins', serif;
+    font-size: 15px;
+}
+
+.infleuncer_contracts_compl {
+    font-family: 'Poppins', serif;
+    font-size: 15px;
+    color: #74767e;
+}
+
+.symbol_margin {
+    margin-top: 0.2px;
+    margin-right: 2px;
+}
+
+.infl_heading_browse {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

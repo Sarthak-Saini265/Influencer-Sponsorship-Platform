@@ -1,0 +1,647 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+}
+
+.main_div {
+    height: 100vh;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
+    margin-top: 2.7px;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+}
+
+/* .content::-webkit-scrollbar {
+    display: none;
+} */
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 23px;
+}
+
+.nav_list_anchors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+}
+
+.nav_list_anchors:hover {
+    text-decoration: underline;
+}
+
+#explore_div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -2px;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    user-select: none;
+}
+
+#explore_div:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore_arrow {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 250,
+        'GRAD' 0,
+        'opsz' 20 !important;
+    font-size: 23px !important;
+    user-select: none;
+    transition: transform 0.15s ease-in-out;
+}
+
+.explore_overlay {
+    z-index: 5;
+    position: fixed;
+    height: auto;
+    width: 344px;
+    /* width: 354px; */
+    margin-top: 21em;
+    margin-left: -2em;
+    margin-left: 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+    /* padding: 15px; */
+}
+
+.explore_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.explore_overlay_ul:hover {
+    cursor: pointer;
+}
+
+.explore_sponsors_li {
+    padding: 15px;
+}
+
+.explore_sponsors_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_niche_li {
+    padding: 15px;
+}
+
+.explore_niche_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_campaigns_li {
+    padding: 15px;
+}
+
+.explore_campaigns_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_profile_maker_li {
+    padding: 15px;
+}
+
+.explore_profile_maker_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_sponsors_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.explore_sponsors_heading {
+    font-family: 'Ubuntu', serif;
+    color: #404145;
+    font-weight: 800;
+}
+
+.explore_sponsors_desc {
+    font-family: 'Ubuntu', serif;
+    font-size: 15px;
+    color: #404145;
+    margin-top: 5px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.profile_pic_li {
+    margin-left: 5px;
+}
+
+.profile_pic_div_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    border-radius: 148px;
+    overflow: hidden;
+}
+
+
+.profile_pic_nav {
+    width: auto;
+    height: 100%;
+}
+
+.profile_pic_div_nav:hover {
+    cursor: pointer;
+}
+
+.profile_overlay {
+    z-index: 5;
+    position: fixed;
+    height: auto;
+    width: 150px;
+    margin-top: 14em;
+    margin-left: 11.5em;
+    margin-left: 148px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+}
+
+.profile_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.profile_overlay_ul:hover {
+    cursor: pointer;
+}
+
+.profile_overlay_li {
+    padding: 15px;
+}
+
+.profile_overlay_li:hover {
+    background-color: #F5F5F5;
+}
+
+.profile_overlay_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.profile_overlay_heading {
+    font-family: 'Poppins', serif;
+    color: #404145;
+    font-weight: 900;
+}
+
+.logo {
+    width: 275px;
+    height: 75px;
+    margin-top: 2px;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-right: 9em;
+}
+
+.navbar_head {
+    /* border: 3.5px solid transparent; */
+    background-color: #fff;
+    width: 100%;
+    height: 73px;
+    margin-top: -5px;
+    /* margin-left: -3px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e4e5e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: 150vh;
+    width: 65%;
+    margin-top: 58px;
+}
+
+
+.profile_picture_edit_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%;
+    max-height: 19em;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #dadbdd;
+    box-shadow: 0 1.2px 10px rgba(0, 0, 0, .05), 0 2px 20px rgba(0, 0, 0, .05), 0 1px 25px rgba(0, 0, 0, .05);
+}
+
+.profile_pic_heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #F8F8F9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.profile_pic_heading h4 {
+    font-family: 'Ubuntu', serif;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    padding-left: 25px;
+    color: #575a5f;
+}
+
+.picture_with_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 69%;
+    margin-top: 20px;
+}
+
+.profile_pic_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 10rem;
+    background-color: white;
+    border-radius: 148px;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
+.profile_pic {
+    width: auto;
+    height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.profile_pic_div:hover {
+    cursor: pointer;
+}
+
+
+.picture_edit_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 145px;
+    /* margin-left: -60px; */
+    padding: 5px;
+    height: 11%;
+    border: 1.5px solid #fa8131;
+    border-radius: 4px;
+    font-size: 15px;
+    /* margin-top: 15px; */
+    font-family: 'Ubuntu', serif;
+    color: #fa8131;
+    user-select: none;
+}
+
+.picture_edit_button:hover {
+    cursor: pointer;
+    background: #fa8131;
+    color: white;
+}
+
+.account_details_password {
+    display: flex;
+    flex-direction: column;
+    width: 62%;
+    max-height: 54em;
+}
+
+
+.account_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 82%;
+    height: max-content;
+    margin-left: 23px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #dadbdd;
+    box-shadow: 0 1.2px 10px rgba(0, 0, 0, .05), 0 2px 20px rgba(0, 0, 0, .05), 0 1px 25px rgba(0, 0, 0, .05);
+}
+
+.account_details_heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #F8F8F9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.account_details_heading h4 {
+    font-family: 'Ubuntu', serif;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    padding-left: 25px;
+    color: #575a5f;
+}
+
+
+
+.edit_form {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    padding: 12px;
+}
+
+.form_field {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Open Sans', serif;
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #69707a;
+}
+
+.username_div {
+    width: 103.29%;
+}
+
+.form_names {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input_side_width {
+    width: 48%;
+}
+
+.input_extreme_right {
+    margin-right: 8px;
+}
+
+.country_gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+input {
+    font-size: 15px;
+    margin-top: 5px;
+    height: 29px;
+    width: 90%;
+    border: 1px solid #c5ccd6;
+    border-radius: 5px;
+    color: #69707a;
+    padding: 10px;
+    padding-left: 17px;
+}
+
+/* input:hover{
+    border: 1px solid #fa8131;
+} */
+
+input:focus {
+    outline: none;
+    border: 1px solid #fa8131;
+}
+
+
+
+select {
+    font-size: 13.5px;
+    margin-top: 5px;
+    height: 43px;
+    width: 100%;
+    border: 1px solid #c5ccd6;
+    border-radius: 4px;
+    color: #69707a;
+    padding: 10px;
+}
+
+select:focus {
+    outline: none;
+    border: 1px solid #fa8131;
+}
+
+
+
+.country_div {
+    margin-left: 218px;
+}
+
+
+
+.input_extreme_left {
+    margin-left: 5px;
+}
+
+
+
+.submit_button {
+    margin-top: 8px;
+}
+
+.submit {
+    font-family: 'Ubuntu', serif;
+    /* font-weight: 900; */
+    width: 125px;
+    height: 35px;
+    padding: 2px;
+    background-color: white;
+    border: 1.5px solid #fa8131;
+    color: #fa8131;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background: #fa8131;
+    color: white;
+}
+
+
+.edit_password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 82%;
+    height: 43%;
+    margin-left: 23px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #dadbdd;
+    box-shadow: 0 1.2px 10px rgba(0, 0, 0, .05), 0 2px 20px rgba(0, 0, 0, .05), 0 1px 25px rgba(0, 0, 0, .05);
+}
+
+
+
+.edit_password_heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #F8F8F9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #dadbdd;
+}
+
+.edit_password_heading h4 {
+    font-family: 'Ubuntu', serif;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    padding-left: 25px;
+    color: #575a5f;
+}
+
+.edit_password_heading p {
+    font-family: 'Ubuntu', serif;
+    color: #69707a;
+    ;
+    margin-left: 5px;
+}
+
+
+.password_form {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+
+.password_submit {
+    font-family: 'Ubuntu', serif;
+    /* font-weight: 900; */
+    width: 125px;
+    height: 35px;
+    padding: 2px;
+    background-color: white;
+    border: 1.5px solid crimson;
+    color: crimson;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.password_submit:hover {
+    cursor: pointer;
+    background: crimson;
+    color: white;
+}
+
+
+
+.image_upload {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 30%;
+    height: 24%;
+    background-color: white;
+    border: 1px solid #dadbdd;
+    border-radius: 4px;
+    margin-left: 44em;
+    margin-top: 13em;
+    box-shadow: 0 1.2px 10px rgba(0, 0, 0, .05), 0 2px 20px rgba(0, 0, 0, .05), 0 1px 25px rgba(0, 0, 0, .05);
+    display: none;
+}
+
+
+
+
+.url_div {
+    margin-left: 10px;
+}
+
+
+.url_input {
+    width: 80%;
+    height: 20px;
+}
+
+.url_submit {
+    margin-left: 10px;
+}
+
+
+.black_overlay {
+    position: absolute;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100vh;
+    display: none;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/static/styles/sp_profile_edit_page.css">
+    <title>{{username}} - Edit Profile</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <!-- <ul class="nav_list">
+                    <li class="nav_list_anchors"><a href="#">Explore</a></li>
+                    <li class="nav_list_anchors"><a href="#">Become a Sponsor</a></li>
+                </ul> -->
+            </nav>
+        </header>
+        <div class="black_overlay"></div>
+        <div class="image_upload">
+            <div class="account_details_heading">
+                <h4 class="upload_head">Enter URL for your image</h4>
+            </div>
+            <form action="" method="POST" id="img_url_form" onsubmit="return handleFormSubmit(event)">
+                <div class="form_field url_div">
+                    <label for="image_url" class="form_label">Image Url</label>
+                    <input type="text" name="image_url" id="image_url" class="url_input" required>
+                </div>
+                <div class="submit_button url_submit">
+                    <input type="submit" value="Upload" class="submit">
+                </div>
+            </form>
+        </div>
+        <div class="content">
+            <div class="profile_picture_edit_div">
+                <div class="profile_pic_heading">
+                    <h4>Profile Picture</h4>
+                </div>
+                <div class="picture_with_button">
+                    <div class="profile_pic_div">
+                        <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg"
+                            alt="" class="profile_pic">
+                    </div>
+                    <div class="picture_edit_button" onclick=upload_overlay_trigger()>Upload an image</div>
+                </div>
+            </div>
+            <div class="account_details_password">
+                <div class="account_details">
+                    <div class="account_details_heading">
+                        <h4>Account Details</h4>
+                    </div>
+                    <div class="edit_form">
+                        <form action="/sponsor/{{username}}/new_profile" method="POST">
+                            <div class="form_names input_extreme_left">
+                                <div class="form_field input_side_width">
+                                    <label for="name" class="form_label">Company Name</label>
+                                    <input type="text" name="name" id="name" class="form_input" required>
+                                </div>
+                            </div>
+                            <div class="form_field input_extreme_left">
+                                <label for="domain" class="form_label">Domain</label>
+                                <input type="text" name="domain" id="domain" class="form_input" required>
+                                <input type="hidden" name="hidden_image_url" id="hidden_image_url">
+                            </div>
+                            <div class="form_field input_extreme_left">
+                                <label for="year_founded" class="form_label">Year Founded</label>
+                                <input type="text" name="year_founded" id="year_founded" class="form_input" required>
+                            </div>
+                            <div class="form_field input_extreme_left">
+                                <label for="industry" class="form_label">Industry</label>
+                                <input type="text" name="industry" id="industry" class="form_input" required>
+                            </div>
+                            <div class="form_field input_extreme_left">
+                                <label for="country" class="form_label">Country</label>
+                                <input type="text" name="country" id="country" class="form_input" required>
+                            </div>
+                            <div class="form_field input_extreme_left">
+                                <label for="budget" class="form_label">Budget</label>
+                                <input type="number" name="budget" id="budget" class="form_input" required>
+                            </div>
+                            <div class="form_field input_extreme_left">
+                                <label for="linkedin" class="form_label">Linkedin Profile</label>
+                                <input type="text" name="linkedin" id="linkedin" class="form_input" required>
+                            </div>
+                            <div class="submit_button">
+                                <input type="submit" value="Save changes" class="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/scripts/sponsor_profile_creator.js"></script>
+</body>
+
+</html>

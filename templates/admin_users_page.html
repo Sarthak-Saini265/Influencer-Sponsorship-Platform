@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/static/styles/admin_users_page.css">
+    <title>Site Users</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <ul class="nav_list">
+                    <li><a href="/admin">Dashboard</a></li>
+                    <li><a href="/admin/users">Users</a></li>
+                    <li><a href="/admin/all_campaigns">Campaigns</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="flagged_users">
+                <h1 class="flagged_users_heading">Flagged Users</h1>
+                <div class="flagged_influencers">
+                    <h3 class="flagged_inf_heading">Influencers</h3>
+                    <div class="all_flagged_inf">
+                        {% for inf in flagged_inf %}
+                        <div class="influencer_div">
+                            <div class="inf_name">
+                                <h3 class="influencer_name">{{inf.name}}</h3>
+                            </div>
+                            <div class="inf_img_flag">
+                                <div class="black_overlay_flag" counter="{{loop.index}}"></div>
+                                <div class="flag_ban_overlay_flag">
+                                    <div class="flag_btn_flag" title="Unflag User"
+                                        username="{{get_username(inf.inf_id)}}"
+                                        onclick="document.getElementsByClassName('unflag_form')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined flag_ico_flagged">flag</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_username(inf.inf_id)}}/unflag" method="POST"
+                                        class="unflag_form" hidden></form>
+                                    <div class="ban_btn_flag" title="Ban User"
+                                        onclick="document.getElementsByClassName('ban_form_flag')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined ban_ico_flagged">block</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_username(inf.inf_id)}}/ban" method="POST"
+                                        class="ban_form_flag" hidden></form>
+                                </div>
+                                <img src="{{inf.profile_pic}}" alt="img" class="influencer_image_flag">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="flagged_sponsors">
+                    <h3 class="flagged_sp_heading">Sponsors</h3>
+                    <div class="all_flagged_sp">
+                        {% for sp in flagged_sp %}
+                        <div class="influencer_div">
+                            <div class="inf_name">
+                                <h3 class="influencer_name">{{format_title(sp.name)}}</h3>
+                            </div>
+                            <div class="sp_img_flag">
+                                <div class="black_overlay_flag_sp" counter="{{loop.index}}"></div>
+                                <div class="flag_ban_overlay_flag">
+                                    <div class="flag_btn_flag_sp" title="Unflag User"
+                                        username="{{get_sp_username(sp.user_id)}}"
+                                        onclick="document.getElementsByClassName('unflag_form_sp')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined flag_ico_flagged">flag</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_sp_username(sp.user_id)}}/unflag" method="POST"
+                                        class="unflag_form_sp" hidden></form>
+                                    <div class="ban_btn_flag" title="Ban User"
+                                        onclick="document.getElementsByClassName('ban_form_flag_sp')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined ban_ico_flagged">block</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_sp_username(sp.user_id)}}/ban" method="POST"
+                                        class="ban_form_flag_sp" hidden></form>
+                                </div>
+                                <img src="{{sp.logo}}" alt="img" class="sp_image_flag">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="banned_users">
+                <h1 class="flagged_users_heading">Banned Users</h1>
+                <div class="flagged_influencers">
+                    <h3 class="flagged_inf_heading">Influencers</h3>
+                    <div class="all_flagged_inf">
+                        {% for inf in banned_inf %}
+                        <div class="influencer_div">
+                            <div class="inf_name">
+                                <h3 class="influencer_name">{{inf.name}}</h3>
+                            </div>
+                            <div class="inf_img_flag">
+                                <div class="black_overlay_ban" counter="{{loop.index}}"></div>
+                                <div class="flag_ban_overlay_flag">
+                                    <div class="flag_btn_ban" title="Flag User" username="{{get_username(inf.inf_id)}}"
+                                        onclick="document.getElementsByClassName('flag_form_ban')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined flag_ico_flagged">flag</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_username(inf.inf_id)}}/flag" method="POST"
+                                        class="flag_form_ban" hidden></form>
+                                    <div class="ban_btn_flag" title="Unban User"
+                                        onclick="document.getElementsByClassName('unban_form')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined ban_ico_flagged">block</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_username(inf.inf_id)}}/unban" method="POST"
+                                        class="unban_form" hidden></form>
+                                </div>
+                                <img src="{{inf.profile_pic}}" alt="img" class="influencer_image_flag">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="flagged_sponsors">
+                    <h3 class="flagged_sp_heading">Sponsors</h3>
+                    <div class="all_flagged_sp">
+                        {% for sp in banned_sp %}
+                        <div class="influencer_div">
+                            <div class="inf_name">
+                                <h3 class="influencer_name">{{format_title(format_title(sp.name))}}</h3>
+                            </div>
+                            <div class="sp_img_flag">
+                                <div class="black_overlay_ban_sp" counter="{{loop.index}}"></div>
+                                <div class="flag_ban_overlay_flag">
+                                    <div class="flag_btn_ban_sp" title="Flag User"
+                                        username="{{get_sp_username(sp.user_id)}}"
+                                        onclick="document.getElementsByClassName('flag_form_ban_sp')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined flag_ico_flagged">flag</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_sp_username(sp.user_id)}}/flag" method="POST"
+                                        class="flag_form_ban_sp" hidden></form>
+                                    <div class="ban_btn_flag" title="Unban User"
+                                        onclick="document.getElementsByClassName('unban_form_sp')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined ban_ico_flagged">block</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_sp_username(sp.user_id)}}/unban" method="POST"
+                                        class="unban_form_sp" hidden></form>
+                                </div>
+                                <img src="{{sp.logo}}" alt="img" class="sp_image_flag">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="all_users">
+                <div class="influencers">
+                    <div class="heading_search">
+                        <h1 class="all_inf_heading">Influencers</h1>
+                        <div class="search_div">
+                            <form action="/admin/search/inf" id="search_inf_form" method="GET">
+                                <input type="text" class="search" id="search_inf" name="search"
+                                    placeholder="Search Influencers">
+                                <span class="material-symbols-outlined" id="search_icon">search</span>
+                            </form>
+                        </div>
+                    </div>
+                    {% if not all_inf %}
+                    <div class="no_entries">
+                        <h3>No entries found</h3>
+                    </div>
+                    {% else %}
+                    <div class="all_inf">
+                        {% for inf in all_inf %}
+                        <div class="influencer_div">
+                            <div class="inf_name">
+                                <h3 class="influencer_name">{{inf.name}}</h3>
+                            </div>
+                            <div class="inf_img">
+                                <div class="black_overlay" counter="{{loop.index}}"></div>
+                                <div class="flag_ban_overlay">
+                                    <div class="flag_btn" title="Flag User" username="{{get_username(inf.inf_id)}}"
+                                        onclick="document.getElementsByClassName('flag_form')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined flag_ico">flag</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_username(inf.inf_id)}}/flag" method="POST"
+                                        class="flag_form" hidden></form>
+                                    <div class="ban_btn" title="Ban User"
+                                        onclick="document.getElementsByClassName('ban_form')[{{loop.index}}-1].submit()">
+                                        <span class="material-symbols-outlined ban_ico">block</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_username(inf.inf_id)}}/ban" method="POST"
+                                        class="ban_form" hidden></form>
+                                </div>
+                                <img src="{{inf.profile_pic}}" alt="img" class="influencer_image">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="sponsors">
+                    <div class="heading_search">
+                        <h1 class="all_sp_heading">Sponsors</h1>
+                        <div class="search_div">
+                            <form action="/admin/search/sp" id="search_inf_form" method="GET">
+                                <input type="text" class="search" id="search_inf" name="search"
+                                    placeholder="Search Sponsors">
+                                <span class="material-symbols-outlined" id="search_icon">search</span>
+                            </form>
+                        </div>
+                    </div>
+                    {% if not all_sp %}
+                    <div class="no_entries">
+                        <h3>No entries found</h3>
+                    </div>
+                    {% else %}
+                    <div class="all_sp">
+                        {% for sp in all_sp %}
+                        <div class="influencer_div">
+                            <div class="inf_name">
+                                <center>
+                                    <h3 class="influencer_name">{{format_title(sp.name)}}</h3>
+                                </center>
+                            </div>
+                            <div class="inf_img">
+                                <div class="black_overlay_sp" counter="{{loop.index}}"></div>
+                                <div class="flag_ban_overlay">
+                                    <div class="flag_btn_sp" title="Flag User"
+                                        username="{{get_sp_username(sp.user_id)}}">
+                                        <span class="material-symbols-outlined flag_ico">flag</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_sp_username(sp.user_id)}}/flag" method="POST"
+                                        class="flag_form" hidden></form>
+                                    <div class="ban_btn" title="Ban User">
+                                        <span class="material-symbols-outlined ban_ico">block</span>
+                                    </div>
+                                    <form action="/admin/user/{{get_sp_username(sp.user_id)}}/ban" method="POST"
+                                        class="ban_form" hidden></form>
+                                </div>
+                                <img src="{{sp.logo}}" alt="img" class="sponsor_image">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let main_div = document.querySelector(".main_div");
+
+        let storedScrollPosition = localStorage.getItem("sidebarScroll");
+        if (storedScrollPosition !== null) {
+            main_div.scrollTop = Number(storedScrollPosition);
+        }
+
+        window.addEventListener("beforeunload", () => {
+            let scrollPositionRelativeToDocument = main_div.offsetTop - document.body.scrollTop;
+            localStorage.setItem("sidebarScroll", scrollPositionRelativeToDocument);
+        });
+    </script>
+    <script src="/static/scripts/admin_users_page.js"></script>
+</body>
+
+</html>

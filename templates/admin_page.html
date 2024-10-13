@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/styles/admin.css">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <ul class="nav_list">
+                    <li><a href="/admin">Dashboard</a></li>
+                    <li><a href="/admin/users">Users</a></li>
+                    <li><a href="/admin/all_campaigns">Campaigns</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="hello_heading_div">
+                <h1 class="hello_heading">Hey Sarthak</h1>
+                <span class="material-symbols-outlined">waving_hand</span>
+            </div>
+            <div class="dashboard">
+                <div class="dashboard_head">
+                    <h2>Admin Dashboard</h2>
+                </div>
+                <div class="summary_metrics">
+                    <h2 class="summary_heading">Summary</h2>
+                    <div class="summary_all_divs metric_all_divs">
+                        <div class="summary_div">
+                            <h5># of Active Users</h5>
+                            <p>{{active_users}}</p>
+                        </div>
+                        <div class="summary_div">
+                            <h5># of Users</h5>
+                            <p>{{no_of_users}}</p>
+                        </div>
+                        <div class="summary_div">
+                            <h5># of Influencers</h5>
+                            <p>{{no_of_inf}}</p>
+                        </div>
+                        <div class="summary_div">
+                            <h5># of Sponsors</h5>
+                            <p>{{no_of_sponsors}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="campaign_metrics">
+                    <h2 class="campaign_heading summary_heading">Campaign Metrics</h2>
+                    <div class="campaign_all_divs metric_all_divs">
+                        <div class="campaign_div summary_div">
+                            <h5># of Ongoing Campaigns</h5>
+                            <p>{{ongoing_campaigns}}</p>
+                        </div>
+                        <div class="campaign_div summary_div">
+                            <h5># of Ended Campaigns</h5>
+                            <p>{{ended_campaigns}}</p>
+                        </div>
+                        <div class="campaign_div summary_div">
+                            <h5>Average Campaign Duration</h5>
+                            <p>{{avg_campaign_duration}} days</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contract_metrics">
+                    <h2 class="contract_heading summary_heading">Contract Metrics</h2>
+                    <div class="contract_all_divs metric_all_divs">
+                        <div class="contract_div summary_div">
+                            <h5># of Contracts Fulfilled this Month</h5>
+                            <p>{{fulfilled_this_month}}</p>
+                        </div>
+                        <div class="contract_div summary_div">
+                            <h5># of Fulfilled Contracts</h5>
+                            <p>{{fulfilled_contracts}}</p>
+                        </div>
+                        <div class="contract_div summary_div">
+                            <h5>Average Contract Value</h5>
+                            <p>${{insert_commas(avg_contract_value)}}</p>
+                        </div>
+                        <div class="contract_div summary_div">
+                            <h5>Average Sponsor Profit</h5>
+                            <p>${{insert_commas(avg_sp_profit)}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_niches">
+                    <h2 class="top_niches_heading summary_heading">Top Niches</h2>
+                    <div class="bar_chart">
+                        <canvas id="bar" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var ctx = document.getElementById("bar").getContext("2d");
+
+        var niches = {{ dash_niches| tojson }};
+        var no_of_completions = {{ dash_no_completions| tojson }};
+
+        var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(255, 0, 0, 0.6)');
+        gradient.addColorStop(0.5, 'rgba(255, 69, 0, 0.6)');
+        gradient.addColorStop(1, 'rgba(255, 140, 0, 0.6)');
+
+        var data = {
+            labels: niches,
+            datasets: [{
+                label: 'Niches',
+                backgroundColor: gradient,
+                borderColor: 'rgb(54, 162, 235)',
+                data: no_of_completions,
+            }]
+        };
+
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function (value) {
+                            return '$' + value;
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: '# of Completions',
+                        padding: { right: 20 },
+                        font: {
+                            size: 15
+                        }
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Niches',
+                        padding: { top: 10 },
+                        font: {
+                            size: 15
+                        }
+                    }
+                }
+            }
+        };
+
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+    </script>
+</body>
+
+</html>

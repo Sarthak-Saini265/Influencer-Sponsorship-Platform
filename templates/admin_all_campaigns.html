@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" <link rel="stylesheet" href="/static/styles/admin_all_campaigns.css">
+    <title>All Campaigns</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <ul class="nav_list">
+                    <li><a href="/admin">Dashboard</a></li>
+                    <li><a href="/admin/users">Users</a></li>
+                    <li><a href="/admin/all_campaigns">Campaigns</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="flagged_campaigns all_campaigns">
+            <div class="heading_all_campaigns">
+                <h1 class="flag_head fonts">Flagged Campaigns</h1>
+            </div>
+            {% if not flagged %}
+            <div class="no_entries">
+                <div class="text_ico">
+                    <h3>No entries found</h3>
+                    <span class="material-symbols-outlined" id="sad_ico">sentiment_dissatisfied</span>
+                </div>
+            </div>
+            {% else %}
+            <div class="ongoing_all_divs">
+                {% for campaign in flagged %}
+                <div class="ongoing_campaign_div">
+                    <div class="black_overlay_flag" counter="{{loop.index}}"></div>
+                    <div class="flag_ban_overlay">
+                        <div class="flag_btn_flag" title="Unflag Campaign" campaign_id="{{campaign.campaign_id}}"
+                            onclick="document.getElementsByClassName('unflag_form')[{{loop.index}}-1].submit()">
+                            <span class="material-symbols-outlined flag_ico">flag</span>
+                        </div>
+                        <form action="/admin/campaign/{{campaign.campaign_id}}/unflag" method="POST" class="unflag_form"
+                            hidden></form>
+                        <div class="ban_btn" title="Remove Campaign"
+                            onclick="document.getElementsByClassName('remove_form')[{{loop.index}}-1].submit()">
+                            <span class="material-symbols-outlined ban_ico">block</span>
+                        </div>
+                        <form action="/admin/campaign/{{campaign.campaign_id}}/remove" method="POST" class="remove_form"
+                            hidden></form>
+                    </div>
+                    <h1 class="ongoing_campaign_heading">{{campaign.name}}</h1>
+                    <h2 class="ongoing_campaign_company">by: {{get_company_name(campaign.company)}}</h2>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="all_campaigns">
+            <div class="heading_all_campaigns">
+                <h1 class="all_head fonts">All Campaigns</h1>
+            </div>
+            <div class="everything_ongoing_campaigns">
+
+                <div class="ongoing_heading_div">
+                    <h2 class="ongoing_heading fonts">Ongoing</h2>
+                </div>
+                <div class="ongoing_all_divs">
+                    {% for campaign in ongoing %}
+                    <div class="ongoing_campaign_div">
+                        <div class="black_overlay" counter="{{loop.index}}"></div>
+                        <div class="flag_ban_overlay">
+                            <div class="flag_btn" title="Flag Campaign" campaign_id="{{campaign.campaign_id}}"
+                                onclick="document.getElementsByClassName('flag_form')[{{loop.index}}-1].submit()">
+                                <span class="material-symbols-outlined flag_ico">flag</span>
+                            </div>
+                            <form action="/admin/campaign/{{campaign.campaign_id}}/flag" method="POST" class="flag_form"
+                                hidden></form>
+                            <div class="ban_btn" title="Remove Campaign"
+                                onclick="document.getElementsByClassName('remove_form')[{{loop.index}}-1].submit()">
+                                <span class="material-symbols-outlined ban_ico">block</span>
+                            </div>
+                            <form action="/admin/campaign/{{campaign.campaign_id}}/remove" method="POST" class="remove_form"
+                            hidden></form>
+                        </div>
+                        <h1 class="ongoing_campaign_heading">{{campaign.name}}</h1>
+                        <h2 class="ongoing_campaign_company">by: {{get_company_name(campaign.company)}}</h2>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="everything_ended_campaigns">
+
+                <div class="ended_heading_div">
+                    <h2 class="ended_heading fonts">Ended</h2>
+                </div>
+                <div class="ended_all_divs">
+                    {% for campaign in ended %}
+                    <div class="ended_campaign_div" onclick="location.href='/campaign/{{campaign.campaign_id}}'">
+                        <h1 class="ended_campaign_heading">{{campaign.name}}</h1>
+                        <h2 class="ended_campaign_company">by: {{get_company_name(campaign.company)}}</h2>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let main_div = document.querySelector(".main_div");
+
+        let storedScrollPosition = localStorage.getItem("sidebarScroll2");
+        if (storedScrollPosition !== null) {
+            main_div.scrollTop = Number(storedScrollPosition);
+        }
+
+        window.addEventListener("beforeunload", () => {
+            let scrollPositionRelativeToDocument = main_div.offsetTop - document.body.scrollTop;
+            localStorage.setItem("sidebarScroll2", scrollPositionRelativeToDocument);
+        });
+
+    </script>
+    <script src="/static/scripts/admin_all_campaigns.js"></script>
+</body>
+
+</html>

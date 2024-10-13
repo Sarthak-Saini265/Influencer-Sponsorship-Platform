@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/static/styles/influencer_page.css">
+    <title>Sparked - {{inf.name}}</title>
+</head>
+
+<body>
+    <div class="main_div">
+        {% if 'logged_in' not in session %}
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <ul class="nav_list">
+                    <li id="explore_div">
+                        Explore
+                        <span class="material-symbols-outlined explore_arrow">keyboard_arrow_down</span>
+                    </li>
+                    <div class="explore_overlay" style="display: none;">
+                        <ul class="explore_overlay_ul">
+                            <li class="explore_sponsors_li" onclick="window.location.href='/all_sponsors'">
+                                <a href="#" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Sponsors</span>
+                                    <span class="explore_sponsors_desc">View all sponsors on Sparked</span>
+                                </a>
+                            </li>
+                            <li class="explore_niche_li" onclick="window.location.href='/all_influencers'">
+                                <a href="/all_influencers" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Niches</span>
+                                    <span class="explore_sponsors_desc">Explore influencers with different niches</span>
+                                </a>
+                            </li>
+                            <li class="explore_campaigns_li" onclick="window.location.href='/all_campaigns'">
+                                <a href="#" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Campaigns</span>
+                                    <span class="explore_sponsors_desc">Pick a campaign that fits your tastes</span>
+                                </a>
+                            </li>
+                            <li class="explore_profile_maker_li" onclick="window.location.href='/signup_choose'">
+                                <a href="/signup_choose" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Profile Maker</span>
+                                    <span class="explore_sponsors_desc">Build your own custom profile</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <li><a href="/signup_choose" class="nav_list_anchors">Become a Sponsor</a></li>
+                    <li><a href="/login_page" class="nav_list_anchors">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        {% else %}
+        <header id="head1" class="navbar_head">
+            <nav id="nav1" class="navbar">
+                <a href="/"><img src="/static/imageedit_9_7708440648.png" alt="logo" class="logo"></a>
+                <ul class="nav_list">
+                    <li id="explore_div">
+                        Explore
+                        <span class="material-symbols-outlined explore_arrow">keyboard_arrow_down</span>
+                    </li>
+                    <div class="explore_overlay" style="display: none;">
+                        <ul class="explore_overlay_ul">
+                            <li class="explore_sponsors_li" onclick="window.location.href='/all_sponsors'">
+                                <a href="/all_sponsors" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Sponsors</span>
+                                    <span class="explore_sponsors_desc">View all sponsors on Sparked</span>
+                                </a>
+                            </li>
+                            <li class="explore_niche_li" onclick="window.location.href='/all_influencers'">
+                                <a href="/all_influencers" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Niches</span>
+                                    <span class="explore_sponsors_desc">Explore influencers with different niches</span>
+                                </a>
+                            </li>
+                            <li class="explore_campaigns_li" onclick="window.location.href='/all_campaigns'">
+                                <a href="/all_campaigns" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Campaigns</span>
+                                    <span class="explore_sponsors_desc">Pick a campaign that fits your tastes</span>
+                                </a>
+                            </li>
+                            {% if login_type == 'Sponsor' %}
+                            <li class="explore_profile_maker_li" onclick="window.location.href='/sponsor/{{username}}/personal/profile/edit'">
+                                <a href="/sponsor/{{username}}/personal/profile/edit" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Profile Maker</span>
+                                    <span class="explore_sponsors_desc">Build your own custom profile</span>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="explore_profile_maker_li" onclick="window.location.href='/influencer/{{username}}/personal/profile/edit'">
+                                <a href="/influencer/{{username}}/personal/profile/edit" class="explore_sponsors_anchor">
+                                    <span class="explore_sponsors_heading">Profile Maker</span>
+                                    <span class="explore_sponsors_desc">Build your own custom profile</span>
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <li><a href="#" class="nav_list_anchors become_sponsor">Become a Sponsor</a></li>
+                    <li class="profile_pic_li">
+                        <div class="profile_pic_div_nav">
+                            <img src="{{profile_pic}}" alt="profile_pic" class="profile_pic_nav">
+                        </div>
+                    </li>
+                    <div class="profile_overlay" style="display: none;">
+                        <ul class="profile_overlay_ul">
+                            {% if login_type == 'Sponsor' %}
+                            <li class="profile_overlay_li"
+                                onclick="window.location.href='/sponsor/{{username2}}/personal/profile'">
+                                <a href="/sponsor/{{username2}}/personal/profile" class="profile_overlay_anchor">
+                                    <span class="profile_overlay_heading">Profile</span>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="profile_overlay_li"
+                                onclick="window.location.href='/influencer/{{username2}}/personal/profile'">
+                                <a href="/influencer/{{username2}}/personal/profile" class="profile_overlay_anchor">
+                                    <span class="profile_overlay_heading">Profile</span>
+                                </a>
+                            </li>
+                            {% endif %}
+                            <li class="profile_overlay_li" onclick="window.location.href='#'">
+                                <a href="#" class="profile_overlay_anchor">
+                                    <span class="profile_overlay_heading">Activity</span>
+                                </a>
+                            </li>
+                            <li class="profile_overlay_li" onclick="window.location.href='/logout'">
+                                <a href="/logout" class="profile_overlay_anchor">
+                                    <span class="profile_overlay_heading">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        {% endif %}
+        <div class="influencer_everything">
+            <div class="about_and_right_div">
+                <div class="about_influencer">
+                    <div class="pic_name">
+                        <div class="infl_image">
+                            <img src="{{inf.profile_pic}}" alt="img" class="influencer_image">
+                        </div>
+                        <div class="except_image">
+
+                            <div class="name_rating">
+                                <div class="name_username">
+                                    <h3 class="name">{{inf.name}}</h3>
+                                    <a href="https://www.instagram.com/{{username}}" target="_blank"><span class="username">@{{username}}</span></a>
+                                </div>
+                                <div class="rating">
+                                    <span class="material-symbols-outlined symbol_margin">star</span>
+                                    <h5 class="influencer_rating">{{inf.rating}}</h5>
+                                    <h5 class="influencer_contracts_compl">({{inf.contracts_completed}})</h5>
+                                </div>
+                            </div>
+                            <div class="no_followers">
+                                <span class="followers">{{format_number(inf.no_of_followers)}}</span>
+                                <h5 class="followers_text">Followers</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="niches">
+                        <h3 class="niche_heading">Niches</h3>
+                        <div class="niche_all_divs">
+                            {% for niche in all_niches %}
+                            <div class="niche_div" onclick="window.location.href='/niche/{{niche}}'">
+                                <h4 class="niche_name">{{niche}}</h4>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% if login_type == 'Sponsor' %}
+                    <div class="offer_contract">
+                        <form action="/sponsor//offer/{{inf.inf_id}}" method="POST" class="offer_contract_form">
+                            <label for="offer_contract" class="offer_contract_label">Offer Contract: </label>
+                            <select name="selected_ad" id="selected_ad" class="form_input" required>
+                                {% for ad in get_sp_ads(inf2.company_id) %}
+                                <option value="{{ad.ad_id}}">{{ad.task}}</option>
+                                {% endfor %}
+                            </select>
+                            <div class="submit_div" onclick="document.querySelector('.offer_contract_form').submit()">
+                                <h5 class="submit">Send</h5>
+                                <span class="material-symbols-outlined" id="send_icon">send</span>
+                            </div>
+                        </form>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="right_div">
+                    <div class="pic_name_right_div">
+                        <div class="infl_image_right_div">
+                            <img src="{{inf.profile_pic}}" alt="img" class="influencer_image">
+                        </div>
+                        <div class="except_image_right_div">
+                            <h3 class="name_right_div">{{inf.name}}</h3>
+                            {% if inf.gender == "Male" %}
+                            <div class="gender_div">
+                                <span class="material-symbols-outlined">male</span>
+                                <span class="gender">Male</span>
+                            </div>
+                            {% else %}
+                            <div class="gender_div">
+                                <span class="material-symbols-outlined">female</span>
+                                <span class="gender">Female</span>
+                            </div>
+                            {% endif %}
+                            <div class="no_of_posts">
+                                <div class="insta_image_div">
+                                    <img src="https://raw.githubusercontent.com/Sarthak-Saini265/image_storage/e28f3b64422d0393635727af9107303c7ce1afd1/4747498_instagram_social%20media_icon.svg?raw=true"
+                                        alt="insta" class="insta_image">
+                                </div>
+                                <h3 class="posts">{{format_number(inf.no_of_posts)}} Posts on Instagram</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact_me">
+                        <span class="material-symbols-outlined no_fill">chat_bubble</span>
+                        <h4 class="contact_heading">Contact me</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="completed_ads">
+                <h1 class="completed_heading fonts">Completed Ads</h1>
+                <div class="completed_all_divs">
+                    {% for i in range(completed|length) %}
+                    <div class="completed_ad_div" onclick="window.location.href='/ad/{{completed[i].ad_id}}'">
+                        <h1 class="completed_ad_heading">{{completed[i].task}}</h1>
+                        <h2 class="date_completed">Completed On: {{remove_time(all_date_completed[i])}}</h2>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/scripts/influencer_page.js"></script>
+</body>
+
+</html>

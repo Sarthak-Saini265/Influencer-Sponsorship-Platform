@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/signup_choose.css">
+    <title>Sign Up - Choose Your Role</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Are you looking to connect with influencers or become one yourself?</p>
+        <div class="card-container">
+            <div class="card influencer">
+                <h2>Influencer</h2>
+                <form action="/influencer/signup/choose" method="POST" id="inf_form" style="display: none;">
+                    <!-- <button type="submit">Sign Up as Influencer</button> -->
+                </form>
+            </div>
+            <div class="card sponsor">
+                <h2>Sponsor</h2>
+                <form action="/sponsor/signup/choose" method="POST" id="sponsor_form" style="display: none;">
+                    <!-- <button type="submit">Sign Up as Sponsor</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/scripts/signup_choose.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,368 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.main_div {
+    height: 100vh;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
+    margin-top: 2.7px;
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+}
+
+
+nav {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 23px;
+}
+
+.nav_list_anchors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+}
+
+.nav_list_anchors:hover {
+    text-decoration: underline;
+    text-decoration-color: #f37ab6;
+    text-decoration-thickness: 2px;
+}
+
+#explore_div {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -2px;
+    text-decoration: none;
+    /* color: white; */
+    padding: 13px;
+    font-family: 'Ubuntu', serif;
+    font-size: 18px;
+    user-select: none;
+}
+
+#explore_div:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore_arrow {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 250,
+        'GRAD' 0,
+        'opsz' 20 !important;
+    font-size: 23px !important;
+    user-select: none;
+    transition: transform 0.15s ease-in-out;
+}
+
+.explore_overlay {
+    z-index: 5;
+    position: fixed;
+    height: auto;
+    width: 344px;
+    /* width: 354px; */
+    margin-top: 21em;
+    margin-left: -2em;
+    margin-left: 2px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+    /* padding: 15px; */
+}
+
+.explore_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.explore_overlay_ul:hover {
+    cursor: pointer;
+}
+
+.explore_sponsors_li {
+    padding: 15px;
+}
+
+.explore_sponsors_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_niche_li {
+    padding: 15px;
+}
+
+.explore_niche_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_campaigns_li {
+    padding: 15px;
+}
+
+.explore_campaigns_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_profile_maker_li {
+    padding: 15px;
+}
+
+.explore_profile_maker_li:hover {
+    background-color: #F5F5F5;
+}
+
+.explore_sponsors_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.explore_sponsors_heading {
+    font-family: 'Ubuntu', serif;
+    color: #404145;
+    font-weight: 800;
+}
+
+.explore_sponsors_desc {
+    font-family: 'Ubuntu', serif;
+    font-size: 15px;
+    color: #404145;
+    margin-top: 5px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.profile_pic_li {
+    margin-left: 5px;
+}
+
+.profile_pic_div_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    border-radius: 148px;
+    overflow: hidden;
+}
+
+
+.profile_pic_nav {
+    width: auto;
+    height: 100%;
+}
+
+.profile_pic_div_nav:hover {
+    cursor: pointer;
+}
+
+.profile_overlay {
+    z-index: 5;
+    position: fixed;
+    height: auto;
+    width: 150px;
+    margin-top: 14em;
+    margin-left: 11.5em;
+    margin-left: 148px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e4e5e7;
+}
+
+.profile_overlay_ul {
+    width: 100%;
+    padding: 0;
+}
+
+.profile_overlay_ul:hover {
+    cursor: pointer;
+}
+
+.profile_overlay_li {
+    padding: 15px;
+}
+
+.profile_overlay_li:hover {
+    background-color: #F5F5F5;
+}
+
+.profile_overlay_anchor {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.profile_overlay_heading {
+    font-family: 'Poppins', serif;
+    color: #404145;
+    font-weight: 900;
+}
+
+.logo {
+    width: 275px;
+    height: 75px;
+    margin-top: 2px;
+}
+
+.nav_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-right: 9em;
+}
+
+.navbar_head {
+    /* border: 3.5px solid transparent; */
+    background-color: #fff;
+    width: 100%;
+    height: 73px;
+    margin-top: -5px;
+    /* margin-left: -3px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e4e5e7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    font-family: 'Ubuntu', serif;
+    letter-spacing: 0.6px;
+}
+
+.campaign_form {
+    padding: 20px;
+}
+
+.form_group {
+    margin-bottom: 15px;
+    font-family: 'Ubuntu', serif;
+}
+
+
+.form_group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;}
+
+.form_group input,
+.form_group textarea {
+    width: 100%;
+    font-size: 14.5px;
+    padding: 13px;
+    letter-spacing: 0.4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Ubuntu', serif;
+    box-sizing: border-box;
+}
+
+.form_group textarea{
+    max-width: 100%;
+    max-height: 174px;
+    min-width: 100%;
+    min-height: 45px;
+}
+
+.form_group input:hover,
+.form_group textarea:hover {
+    border-color: #f37ab6;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+    border-color: #f37ab6;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.submit_btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #f37ab6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit_btn:hover {
+    background-color: rgb(255, 139, 197);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

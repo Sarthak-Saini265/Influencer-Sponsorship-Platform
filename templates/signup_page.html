@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/site_logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles/signup_page.css">
+    <title>Sign up</title>
+</head>
+
+<body>
+    <div class="main_div">
+        <div class="actual_work_div">
+            <div class="login_content">
+                <h1 class="heading">Create an Account</h1>
+                <form action="/signup" method="POST" id="loginForm" accept-charset="UTF-8">
+                    <div class="input_div">
+                        <input type="text" name="username" id="username" class="input username" placeholder="Username">
+                        <input type="password" name="password" id="password" class="input password" placeholder="Password">
+                        <input type="password" name="confirm_password" id="confirm_password" class="input password" placeholder="Confirm Password">
+                    </div>
+                    <center><input type="submit" value="Sign up" class="submit"></center>
+                </form>
+            </div>
+            <div class="right_div">
+                <center>
+                    <h1 class="righ_div_head">Already a member?</h1>
+                </center>
+                <center>
+                    <p class="desc">Login to access your account</p>
+                </center>
+                <a href="/login_page"><button class="sign_up">Login</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let password = document.getElementById('password');
+        let confirm_password = document.getElementById('confirm_password');
+        let loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function () {
+            if (password.value !== confirm_password.value) {
+                alert('Passwords do not match');
+                event.preventDefault();
+            }
+        })
+    </script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            var passwordInput = document.getElementById('password');
+            var confirm_passwordInput = document.getElementById('confirm_password');
+            passwordInput.value = encodeURIComponent(passwordInput.value);
+            confirm_passwordInput.value = encodeURIComponent(confirm_passwordInput.value);
+        });
+
+        let login_form = document.getElementById('password_edit_form');
+
+        login_form.addEventListener('submit', function (event) {
+            if (passwordInput.value !== confirm_passwordInput.value) {
+                alert('Passwords do not match');
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>
